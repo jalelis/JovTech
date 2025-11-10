@@ -1,0 +1,760 @@
+        /* General Styling Reset and Setup */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #6C757D;
+            --text-color: #333;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --font-stack: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+        
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--bg-light);
+            border-bottom: 2px solid #E0E0E0;
+            box-shadow: #000 0 0 20px;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .left-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+
+        .tag p {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+        .mid-header ul {
+            list-style: none;
+            display: flex;
+            
+        }
+
+        .mid-header a {
+            padding: 0 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .mid-header a:hover, .mid-header .act p {
+            color: var(--primary-color);
+        }
+
+        .right-header {
+            list-style: none;
+            display: flex;
+        }
+
+        .right-header a {
+            font-size: 1.2em;
+            margin-left: 15px;
+            color: var(--text-color);
+        }
+
+        .right-header a:hover {
+            color: var(--primary-color);
+        }
+        /* === NEW HAMBURGER MENU STYLING === */
+        .hamburger-menu {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--text-color);
+            padding: 10px;
+            z-index: 1100; 
+            margin-left: auto; /* Push it to the right on small screens */
+        }
+
+        .fa-bars{
+            margin: 0 10px 0 10px;
+            font-size: normal;
+        }
+        .fa-xmark{
+            margin: 0 10px 0 10px;
+            font-size: normal;
+            color: #000;
+        }
+
+        /* Main Content Styling */
+        .home {
+            flex-grow: 1;
+            padding: 40px 0;
+        }
+
+        .home h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: var(--text-color);
+        }
+
+        .web-main {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styling - General */
+        .section-content {
+            display: none; /* Hide all sections by default */
+        }
+
+        .section-content.active {
+            display: block; /* Show the active section */
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            border-bottom: 2px solid #E0E0E0;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Home Section */
+        #home-section .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        #home-section .main-content img {
+            width: 40%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #home-section .main-description {
+            width: 60%;
+        }
+
+        #home-section .main-description h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        #home-section .add-info {
+            margin-bottom: 40px;
+        }
+
+        #home-section .add-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #home-section .add-info li {
+            background: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        #home-section .ex-project {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #home-section .ex-project .img {
+            flex: 1 1 30%;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        #home-section .ex-project img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* About Section */
+        #about-section .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        #about-section .main-content img {
+            width: 35%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #about-section .main-description {
+            width: 65%;
+        }
+
+        #about-section .main-description h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        .fa-square-youtube {
+            display: inline-block;
+            background-color: #ff0000; /* YouTube Red */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.6s;
+            letter-spacing: 1px;
+        }
+        .yt{
+                text-align: center;
+                margin-top: 30px;
+        }
+        .yt a{
+                display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.6s;
+            letter-spacing: 1px;
+        }
+        .yt a:hover{
+            background-color: #cc0000;
+        }
+
+        #about-section .add-info-about {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        #about-section .about-me {
+            flex: 1;
+        }
+
+        #about-section .about-me h2 {
+            border-bottom: none;
+            margin-bottom: 10px;
+        }
+
+        #about-section .about-me ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #about-section .about-me li {
+            margin-bottom: 5px;
+        }
+
+        #about-section .img-about-me {
+            flex: 1;
+            text-align: center;
+        }
+
+        #about-section .img-about-me img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        #about-section .mission {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #about-section .mission h2 {
+            border-bottom: none;
+        }
+
+        /* Portfolio Section */
+        #portfolio-section .add-info-about {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        #portfolio-section .about-me {
+            flex: 1;
+        }
+
+        #portfolio-section .about-me h2 {
+            border-bottom: none;
+            margin-bottom: 10px;
+        }
+
+        #portfolio-section .about-me ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        #portfolio-section .about-me li {
+            margin-bottom: 5px;
+        }
+
+        #portfolio-section .img-about-me {
+            flex: 1;
+            text-align: center;
+        }
+
+        #portfolio-section .img-about-me img {
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
+            border-radius: 8px;
+            box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        #portfolio-section .main-project {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #portfolio-section .main-project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        #portfolio-section .mission {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Skills Section */
+        #skills-section .skills {
+            margin-bottom: 40px;
+        }
+
+        #skills-section .skills ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        #skills-section .skills li {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #skills-section .skills i {
+            margin-right: 8px;
+        }
+
+        #skills-section .mission {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #skills-section .mission p {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        /* Testimonials Section */
+        #testimonials-section .testimonials {
+            text-align: center;
+            padding: 50px;
+            border: 2px dashed var(--secondary-color);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        #testimonials-section .testimonials h2 {
+            color: var(--secondary-color);
+            border-bottom: none;
+            font-size: 2.5em;
+        }
+
+        #testimonials-section .testimonials p {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+        }
+
+        #testimonials-section .mission {
+            text-align: center;
+        }
+        
+        #testimonials-section .mission p {
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        #contact-section .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact-section .contact h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: none;
+        }
+
+        #contact-section form div {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        #contact-section form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        #contact-section form input[type="text"],
+        #contact-section form input[type="email"],
+        #contact-section form input[type="tel"],
+        #contact-section form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #contact-section form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        #contact-section form button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        #contact-section form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Common CTA Button */
+        .btn-contact {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-contact a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-contact a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling - Minimalist */
+        .footer {
+            background-color: #343A40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        .footer > div {
+            margin-bottom: 10px;
+        }
+
+        .footer i {
+            font-size: 1.5em;
+            margin: 0 5px;
+            text-align: center;
+        }
+        /*
+        .socmed{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .socmed ul a {
+            color: white;
+            font-size: 1.2em;
+            margin: 0 10px 0 10px;
+            border: 1px solid #000;
+        }
+
+        .footer .socmed a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer .terms p {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .socmed .fa-solid {
+             font-size: 16px;
+        }
+        .fa-facebook:before{
+            background-color:transparent;
+            border-radius: 90px; 
+            Color:#0866ff;
+        }
+        .fa-instagram{
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4)
+        }
+
+        */
+        .socmed{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .socmed a{
+            margin: 0 10px 0 10px;
+            font-size: 18px;
+            color: var(--bg-light);
+            text-shadow: #000 1px 1px 3px;
+        
+
+        }
+
+        .socmed .fa-envelope{
+            background-color: #f00;
+            padding: 0px 1px 0px 1px;
+                        border-radius: 3px;
+        }
+
+        .fa-facebook{
+            background-color:var(--bg-light);
+            border-radius: 100px; 
+            
+            Color:#0866ff;
+        }
+        
+        .fa-instagram{
+            color: #f5efef;
+            text-align: center;
+                        border-radius: 3px;
+
+                        padding: 0px 3px 0 3px;
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4)
+        }
+        
+        /* Font Awesome icons simulation (since external CDN is removed) */
+        /* You must replace the <i> tags with actual icons or remove them, as these characters might not display correctly */
+        /* For this example, I'll use simple text symbols or remove them where appropriate for an HTML-only solution. */
+        
+        /* Simulating font-awesome icons with placeholder text */
+        /*
+        .fa-thin:before, .fa-phone:before, .fa-brands:before, .fa-solid:before, .fa-regular:before {
+            font-style: normal;
+            font-weight: normal;
+            margin-right: 5px;
+        }
+        
+        .fa-circle-user:before { content: "👤"; }
+        .fa-phone:before { content: "📞"; }
+        .fa-earth-asia:before { content: "🌐"; }
+        .fa-copyright:before { content: "©"; }
+        .fa-html5:before { content: "🌐"; }
+        .fa-css3-alt:before { content: "#"; }
+        .fa-c:before { content: "C"; }
+        .fa-java:before { content: "☕"; }
+        .fa-python:before { content: "🐍"; }
+        .fa-pen-ruler:before { content: "✏️"; }
+        .fa-layer-group:before { content: "🏗️"; }
+        .fa-paintbrush:before { content: "🖌️"; }
+        .fa-palette:before { content: "🎨"; }
+        .fa-canva:before { content: "🖼️"; }
+        .fa-gears:before { content: "⚙️"; }
+        .fa-user:before { content: "🧑"; }
+        .fa-comment:before { content: "💬"; }
+        */
+        /* Media Queries for Responsiveness */
+        @media (max-width: 900px) {
+            .header {
+                flex-wrap: nowrap; /* Keep logo, icons, and hamburger on one line */
+                justify-content: space-between;
+            }
+
+            /* Show the hamburger icon */
+            .hamburger-menu {
+                display: block;
+                order: 3;
+            }
+
+            /* Reposition right icons if needed, or leave them */
+            .right-header {
+                order: 2;
+                margin-left: auto;
+            }
+            .right-header ul{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: right;
+            }
+            
+            .mid-header {
+                /* Hide the main navigation and turn it into a mobile overlay */
+                display: none; 
+                position: absolute;
+                top: 100%; /* Position right below the header bar */
+                left: 0;
+                width: 100%;
+                order: 4; /* Put it below the header elements */
+                flex-direction: column;
+                background-color: var(--bg-white);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #E0E0E0;
+            }
+
+            .mid-header.active {
+                /* Show when the 'active' class is toggled by JS */
+                display: flex; 
+            }
+
+            .mid-header ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            .mid-header a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+                text-align: left;
+            }
+
+            .mid-header a:last-child {
+                border-bottom: none;
+            }
+
+            /* Keep other mobile styles for content sections */
+            #home-section .main-content,
+            #about-section .main-content,
+            #about-section .add-info-about,
+            #portfolio-section .add-info-about {
+                flex-direction: column;
+            }
+            #home-section .main-content img,
+            #about-section .main-content img,
+            #about-section .main-description,
+            #about-section .about-me,
+            #about-section .img-about-me,
+            #portfolio-section .about-me,
+            #portfolio-section .img-about-me {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            #skills-section .skills ul {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .home h1 {
+                font-size: 2em;
+            }
+            .web-main {
+                padding: 20px;
+            }
+        }
